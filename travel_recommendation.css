@@ -34,7 +34,7 @@ nav {
   body {
     font-family: Arial, sans-serif;
     /* margin: 20px; */
-    background-image: url('nynew.jpg');
+    background-image: url('nynewnew.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -190,9 +190,9 @@ select {
     padding: 20px;
     margin-top: 0px;
     margin-bottom: 20px;
-    margin-right: 20px;
+    margin-right: 100px;
     width: 50px;
-  }
+}
 
 .team-members {
     display: flex;
@@ -206,12 +206,10 @@ select {
     margin: 50px;
     border-radius: 10px;
     width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+}    
 
 .team-member img {
-    width: 100%;
+    width: 20%;
     border-radius: 50%;
 }
 
