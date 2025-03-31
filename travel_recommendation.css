@@ -34,7 +34,7 @@ nav {
   body {
     font-family: Arial, sans-serif;
     /* margin: 20px; */
-    background-image: url('ny.jpg');
+    background-image: url('nynew.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -132,11 +132,11 @@ select {
 .social-media::before {
     content: '';
     position: absolute;
-    top: -220px; /* Adjust this value to position the line above the icons */
+    top: -80px; /* Adjust this value to position the line above the icons */
     left: 50%;
     transform: translateX(-50%);
     width: 1px; /* Width of the line */
-    height: 200px; /* Height of the line */
+    height: 100px; /* Height of the line */
     background-color: white; /* Color of the line */
 }
 
@@ -222,6 +222,7 @@ select {
 }
 
 .team-member p {
+    display: flex;
     font-size: 14px;
     color: white;
 }
