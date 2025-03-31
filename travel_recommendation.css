@@ -34,6 +34,9 @@ nav {
   body {
     font-family: Arial, sans-serif;
     /* margin: 20px; */
+    background-image: url('ny.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   h1 {
@@ -94,7 +97,7 @@ nav {
   
 nav ul .container {
     display: inline-block;
-    background-color: white;l
+    background-color: white;
     border-radius: 15px;
     padding: 5px;
 }    
