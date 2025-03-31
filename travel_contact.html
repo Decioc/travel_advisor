@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Recommendation</title>
+  <link rel="stylesheet" href="./travel_recommendation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Some basic styling for demonstration purposes */
+    #contactForm {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    #contactForm input,
+    #contactForm textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+    }
+    #contactForm button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #contactForm button:hover {
+      background-color: #0056b3;
+    }  
+
+    input.transparent-input {
+        background-color: transparent; /* Makes the background transparent */
+        border: 1px solid #ccc; /* Styles the border */
+        padding: 10px; /* Adds padding for better appearance */
+        color: #000; /* Sets the text color */
+    }
+
+    textarea.transparent-input {
+        background-color: transparent; /* Makes the background transparent */
+        border: 1px solid #ccc; /* Styles the border */
+        padding: 10px; /* Adds padding for better appearance */
+        color: #000; /* Sets the text color */
+    }
+
+  </style>
+</head>
+
+<body class="color-overlay">
+    <nav>
+    <h1>TravelBloom</h1>
+    <ul>
+        <li><a href="./index.html" id="home">Home </a></li>
+        <li><a href="./travel_about.html" id="contact">About Us </a></li>
+        <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
+    </ul>
+</nav>
+
+<div class="social-media">
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+<div class="container-a">
+    <h1>CONTACT US</h1>
+    <p>Get in touch</p>
+    <form id="contactForm">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required class="transparent-input">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required class="transparent-input">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required class="transparent-input"></textarea>
+        </div>
+        <button type="submit" onclick="thankyou()">Submit</button>
+      </form>
+    </div>
+</div>    
+
+
+
+<script src="./travel_recommendation.js"></script>
+</body>
+</html>

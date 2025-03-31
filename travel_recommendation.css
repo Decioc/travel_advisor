@@ -37,6 +37,7 @@ nav {
     background-image: url('nynewnew.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-x: hidden;
   }
   
   h1 {
@@ -204,6 +205,7 @@ select {
 .team-member {
     padding: 20px;
     margin: 50px;
+    margin-top: 0px;
     border-radius: 10px;
     width: 250px;
 }    
@@ -238,3 +240,11 @@ select {
     background-color: #0056b3;
 }
 
+label {
+    color: white;
+}
+
+.form-container {
+    flex: 1;
+    margin-left: auto; /* Aligns the form to the right */
+}
