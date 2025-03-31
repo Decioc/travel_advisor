@@ -194,7 +194,6 @@ select {
     width: 50px;
   }
 
-
 .team-members {
     display: flex;
     justify-content: space-around;
@@ -226,7 +225,6 @@ select {
     font-size: 14px;
     color: white;
     margin: 10px 0;
-    text-align: center;
 }
 
 .team-member button {
