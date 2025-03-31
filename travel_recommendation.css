@@ -176,6 +176,68 @@ select {
     padding: 0px;
     margin-top: 0px;
     margin-left: 150px;
-}   
+}
+
+.team-container {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.team-container h1 {
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 50px;
+  }
+
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    margin: 10px 0;
+    color: white;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: white;
+}
+
+.team-member button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.team-member button:hover {
+    background-color: #0056b3;
+}
+
 
 
