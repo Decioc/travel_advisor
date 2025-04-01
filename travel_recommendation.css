@@ -78,24 +78,6 @@ nav {
     margin-top: 30px;
   }
   
-  #report,#result {
-    padding: 10px;
-    max-width: 400px;
-    word-wrap: break-word;
-  }
-#result{
-  height: 400px;
-  width: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-  #result img{
-    width: 200px;
-    height: 100px;
-  }
-  
 nav ul .container {
     display: inline-block;
     background-color: white;
@@ -248,3 +230,51 @@ label {
     flex: 1;
     margin-left: auto; /* Aligns the form to the right */
 }
+
+#result{
+  display: flex;  
+  height: 800px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 0px;
+}
+#result img{
+    width: 400px;
+    height: auto;
+}
+
+.container-r {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 200px;
+    position: absolute;
+    top: 20px; /* Adjust this value to position the line above the icons */
+    left: 50%;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    margin: 50px;
+}
+
+.box h2 {
+    color: black;
+}
+
+.box p {
+    color: lightgray;
+}
+
+.box button {
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
