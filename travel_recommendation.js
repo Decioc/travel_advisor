@@ -32,6 +32,8 @@ function book() {
         
         console.log("typesearch = ", typesearch)
 
+        var results = []
+
         fetch('travel_recommendation_api.json')
           .then(response => response.json())
           .then(data => {
@@ -39,22 +41,14 @@ function book() {
             const temples = data.temples;
             const beaches = data.beaches;
 
-            console.log ("typesearch = ", typesearch)
+            console.log(countries);
+            console.log ("typesearch = ", typesearch);
 
             switch (typesearch) {
                 case 1:
-                    countries.forEach(element => {
-                        const cities = element.cities;
-                        cities.forEach(city => {
-                            resultDiv.innerHTML += `<img src="${city.imageUrl}" alt="${city.name}">`;
-                            resultDiv.innerHTML += `<h2>${city.name}</h2><br>`;
-                            resultDiv.innerHTML += `<p><strong>${city.description}</strong></p><br>`;
-                            resultDiv.innerHTML += `<button>Visit</button>`;
-                            resultDiv.innerHTML += `<br>`;
-                            myDiv.style.backgroundColor = 'white';
-
-                        })  
-                    })
+                    results = getRandomCities(countries);
+                    showResults(resultDiv, myDiv, results);
+                    break;
                 default:
                     break;   
             }     
@@ -64,3 +58,33 @@ function book() {
             /* resultDiv.innerHTML = 'An error occurred while fetching data.'; */
           });
     }
+
+function getRandomCities(data, numCities = 2) {
+    const allCities = [];
+      
+    // Collect all cities from the JSON data
+    data.forEach(country => {
+        country.cities.forEach(city => {
+            allCities.push(city);
+        });
+    });
+      
+    // Shuffle the array and select the first numCities elements
+    const shuffledCities = allCities.sort(() => 0.5 - Math.random());
+    return shuffledCities.slice(0, numCities);
+}
+
+function showResults(resultDiv, myDiv, results) {
+    console.log("before html", results);  
+    results.forEach(element => {
+        resultDiv.innerHTML += `<img src="${element.imageUrl}" alt="${element.name}">`;
+        resultDiv.innerHTML += `<h2>${element.name}</h2><br>`;
+        resultDiv.innerHTML += `<p><strong>${element.description}</strong></p><br>`;
+        resultDiv.innerHTML += `<button>Visit</button>`;
+        resultDiv.innerHTML += `<br>`;
+        myDiv.style.backgroundColor = 'white';
+    })  
+}
+
+      
+      
