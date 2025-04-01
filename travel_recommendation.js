@@ -1,7 +1,6 @@
 const btnSearch = document.getElementById('btnSearch');
 const btnClear = document.getElementById('btnClear');
 const btnBook = document.getElementById('btnBook');
-const btnVisit = document.getElementById('btnVisit');
 
 function book() {
     alert("Congrats!! You booked your travel!!")
@@ -22,8 +21,6 @@ function visit() {
         const inputTemple = ["temple", "temples"] 
         const inputCountry = ["country", "countries"]
         var typesearch = 0
-    
-        console.log("input = ", input)
 
         if (inputCountry.includes(input)) {
             typesearch = 1;
@@ -38,8 +35,6 @@ function visit() {
                 }
             }
         }
-        
-        console.log("typesearch = ", typesearch)
 
         var results = []
 
@@ -50,21 +45,21 @@ function visit() {
             const temples = data.temples;
             const beaches = data.beaches;
 
-            console.log(countries);
-            console.log ("typesearch = ", typesearch);
-
             switch (typesearch) {
                 case 1:
                     results = getRandomCities(countries);
                     showResults(resultDiv, myDiv, results);
+                    displayTime(results);
                     break;
                 case 2:
                     results = getRandomBeaches(beaches);
                     showResults(resultDiv, myDiv, results);
+                    displayTime(results);
                     break;
                 case 3:
                     results = getRandomTemples(temples);
                     showResults(resultDiv, myDiv, results);
+                    displayTime(results);
                     break;          
                 default:
                     break;   
@@ -117,14 +112,20 @@ function getRandomTemples(data, numTemples = 2) {
 
 
 function showResults(resultDiv, myDiv, results) {
-    console.log("before html", results);  
+
     results.forEach(element => {
         resultDiv.innerHTML += `<img src="${element.imageUrl}" alt="${element.name}">`;
         resultDiv.innerHTML += `<h2>${element.name}</h2><br>`;
         resultDiv.innerHTML += `<p><strong>${element.description}</strong></p><br>`;
-        resultDiv.innerHTML += `<button id="btnVisit">Visit</button>`;
+        resultDiv.innerHTML += `<button class="btnVisit">Visit</button>`;
         resultDiv.innerHTML += `<br>`;
         myDiv.style.backgroundColor = 'white';
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnVisitElements = document.querySelectorAll('.btnVisit');
+            btnVisitElements.forEach(btnVisit => {
+              btnVisit.addEventListener('click', visit);
+            });
+        });  
     })  
 }
 
@@ -139,9 +140,25 @@ function clear() {
 
 }
 
+function displayTime(results) {
+    const timeZones = {
+        Australia: 'Australia/Sydney',
+        Brazil: 'America/Sao_Paulo',
+        Japan: 'Asia/Tokyo',
+        India: 'Asia/Kolkata',
+        Cambodia: 'Asia/Phnom_Penh'
+      };      
+    results.forEach (element => {    
+        var parts = element.name.split(',').map(part => part.trim());
+        country = parts[parts.length - 1];
+        timezone = timeZones[country];
+        options = { timeZone: timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        placeTime = new Date().toLocaleTimeString('en-US', options);
+        console.log("Current time in ", country, " ", placeTime);
+    })
+} 
+
 btnClear.addEventListener('click', clear);
 btnBook.addEventListener('click', book);
-btnVisit.addEventListener('click', visit); 
-
       
       
