@@ -62,6 +62,7 @@ function visit() {
                     displayTime(results);
                     break;          
                 default:
+                    clear();
                     break;   
             }     
         })
