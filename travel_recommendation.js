@@ -1,5 +1,14 @@
+const btnSearch = document.getElementById('btnSearch');
+const btnClear = document.getElementById('btnClear');
+const btnBook = document.getElementById('btnBook');
+const btnVisit = document.getElementById('btnVisit');
+
 function book() {
     alert("Congrats!! You booked your travel!!")
+}
+
+function visit() {
+    alert("Have a nice Trip!!")
 }
 
     function showConsole() {
@@ -49,6 +58,14 @@ function book() {
                     results = getRandomCities(countries);
                     showResults(resultDiv, myDiv, results);
                     break;
+                case 2:
+                    results = getRandomBeaches(beaches);
+                    showResults(resultDiv, myDiv, results);
+                    break;
+                case 3:
+                    results = getRandomTemples(temples);
+                    showResults(resultDiv, myDiv, results);
+                    break;          
                 default:
                     break;   
             }     
@@ -74,17 +91,57 @@ function getRandomCities(data, numCities = 2) {
     return shuffledCities.slice(0, numCities);
 }
 
+function getRandomBeaches(data, numBeaches = 2) {
+    const allBeaches = [];
+    // Collect all beaches from the JSON data
+    data.forEach(beach => {
+            allBeaches.push(beach);
+    });
+      
+    // Shuffle the array and select the first numCities elements
+    const shuffledBeaches = allBeaches.sort(() => 0.5 - Math.random());
+    return shuffledBeaches.slice(0, numBeaches);
+}
+
+function getRandomTemples(data, numTemples = 2) {
+    const allTemples = [];
+    // Collect all beaches from the JSON data
+    data.forEach(temple => {
+            allTemples.push(temple);
+    });
+      
+    // Shuffle the array and select the first numCities elements
+    const shuffledTemples = allTemples.sort(() => 0.5 - Math.random());
+    return shuffledTemples.slice(0, numTemples);
+}
+
+
 function showResults(resultDiv, myDiv, results) {
     console.log("before html", results);  
     results.forEach(element => {
         resultDiv.innerHTML += `<img src="${element.imageUrl}" alt="${element.name}">`;
         resultDiv.innerHTML += `<h2>${element.name}</h2><br>`;
         resultDiv.innerHTML += `<p><strong>${element.description}</strong></p><br>`;
-        resultDiv.innerHTML += `<button>Visit</button>`;
+        resultDiv.innerHTML += `<button id="btnVisit">Visit</button>`;
         resultDiv.innerHTML += `<br>`;
         myDiv.style.backgroundColor = 'white';
     })  
 }
+
+function clear() {
+    const input = document.getElementById('conditionInput');
+    const myDiv = document.getElementById('result');
+    const resultDiv = document.getElementById('result');
+    
+    input.value = ""
+    resultDiv.innerHTML = ""
+    myDiv.style.backgroundColor = ""
+
+}
+
+btnClear.addEventListener('click', clear);
+btnBook.addEventListener('click', book);
+btnVisit.addEventListener('click', visit); 
 
       
       
