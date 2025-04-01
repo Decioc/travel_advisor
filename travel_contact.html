@@ -17,16 +17,6 @@
       margin-bottom: 15px;
       padding: 8px;
     }
-    #contactForm button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #contactForm button:hover {
-      background-color: #0056b3;
-    }  
 
     input.transparent-input {
         background-color: transparent; /* Makes the background transparent */
@@ -68,15 +58,18 @@
     <form id="contactForm">
         <div>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required class="transparent-input">
+          <input type="text" id="name" name="name" required 
+            placeholder="Enter your name" class="transparent-input">
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required class="transparent-input">
+          <input type="email" id="email" name="email" required
+            placeholder="Enter your email" class="transparent-input">
         </div>
         <div>
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required class="transparent-input"></textarea>
+          <textarea id="message" name="message" rows="5" required
+            placeholder="Enter your message" class="transparent-input"></textarea>
         </div>
         <button type="submit" onclick="thankyou()">Submit</button>
       </form>
