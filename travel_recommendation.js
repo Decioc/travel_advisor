@@ -31,7 +31,7 @@ function visit() {
                 if (inputTemple.includes(input)) {
                     typesearch = 3;
                 } else {
-                    typesarch = 0
+                    typesearch = 0
                 }
             }
         }
@@ -115,7 +115,7 @@ function getRandomTemples(data, numTemples = 2) {
 function showResults(resultDiv, myDiv, results) {
 
     results.forEach(element => {
-        resultDiv.innerHTML += `<img src="${element.imageUrl}" alt="${element.name}">`;
+        resultDiv.innerHTML += `<img src="static/img/${element.imageUrl}" alt="${element.name}">`;
         resultDiv.innerHTML += `<h2>${element.name}</h2><br>`;
         resultDiv.innerHTML += `<p><strong>${element.description}</strong></p><br>`;
         resultDiv.innerHTML += `<button class="btnVisit">Visit</button>`;
@@ -152,7 +152,7 @@ function displayTime(results) {
     results.forEach (element => {    
         var parts = element.name.split(',').map(part => part.trim());
         country = parts[parts.length - 1];
-        timezone = timeZones[country];
+        var timezone = timeZones[country];
         options = { timeZone: timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
         placeTime = new Date().toLocaleTimeString('en-US', options);
         console.log("Current time in ", country, " ", placeTime);

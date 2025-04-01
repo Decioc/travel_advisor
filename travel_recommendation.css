@@ -34,7 +34,7 @@ nav {
   body {
     font-family: Arial, sans-serif;
     /* margin: 20px; */
-    background-image: url('nynewnew.jpg');
+    background-image: url('static/img/nynewnew.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
