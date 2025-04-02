@@ -11,8 +11,9 @@ function thankyou() {
     alert("Thank you for contacting us!")
 }
 
-function visit() {
-    alert("Have a nice Trip!!")
+function visit(place) {
+    const message = "have a nice trip to " + place + "!!"
+    alert(message)
 }
 
     function searchPlaces() {
@@ -123,16 +124,11 @@ function showResults(resultDiv, myDiv, results) {
         resultDiv.innerHTML += `<img src="static/img/${element.imageUrl}" alt="${element.name}">`;
         resultDiv.innerHTML += `<h2>${element.name}</h2><br>`;
         resultDiv.innerHTML += `<p><strong>${element.description}</strong></p><br>`;
-        resultDiv.innerHTML += `<button class="btnVisit">Visit</button>`;
+        resultDiv.innerHTML += `<button class="btnVisit" onclick="visit('${element.name}')">Visit</button>`;
         resultDiv.innerHTML += `<br>`;
         myDiv.style.backgroundColor = 'white';
-        document.addEventListener('DOMContentLoaded', () => {
-            const btnVisitElements = document.querySelectorAll('.btnVisit');
-            btnVisitElements.forEach(btnVisit => {
-              btnVisit.addEventListener('click', visit);
-            });
-        });  
-    })  
+    });
+    
 }
 
 function clear() {
