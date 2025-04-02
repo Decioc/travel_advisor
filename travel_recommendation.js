@@ -1,16 +1,21 @@
 const btnSearch = document.getElementById('btnSearch');
 const btnClear = document.getElementById('btnClear');
 const btnBook = document.getElementById('btnBook');
+const btnSend = document.getElementById('btnSend');
 
 function book() {
     alert("Congrats!! You booked your travel!!")
+}
+
+function thankyou() {
+    alert("Thank you for contacting us!")
 }
 
 function visit() {
     alert("Have a nice Trip!!")
 }
 
-    function showConsole() {
+    function searchPlaces() {
 
         const input = document.getElementById('conditionInput').value.toLowerCase();
         const myDiv = document.getElementById('result');
@@ -157,9 +162,23 @@ function displayTime(results) {
         placeTime = new Date().toLocaleTimeString('en-US', options);
         console.log("Current time in ", country, " ", placeTime);
     })
-} 
+}
 
-btnClear.addEventListener('click', clear);
-btnBook.addEventListener('click', book);
+if (btnSearch) {
+    btnSearch.addEventListener('click', searchPlaces)
+}
+
+if (btnClear) {
+    btnClear.addEventListener('click', clear);
+}
+
+if (btnBook) {
+    btnBook.addEventListener('click', book);
+}
+
+if (btnSend) {
+    btnSend.addEventListener('click', thankyou);
+}
+
       
       
